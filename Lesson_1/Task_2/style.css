@@ -1,0 +1,120 @@
+html, body {
+	background-color: #dddddd;
+	width: 100%;
+}
+
+p, html, body, .main-head{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+html, body, #red-circle{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-container, .circle-container, .last-container{
+	border-bottom: 3px solid black;
+}
+
+footer, #menu, #blue-div, .text-div, .text-div .main-container{
+	border: 3px solid black;
+}
+
+#blue-div, .text-div{
+	float: left;
+	height: 98%;
+}
+
+.text-container, .last-container{
+	height: 30%;
+}
+
+#menu, .text-div, .text-container, .circle-container, .last-container{
+	background-color: white;
+}
+
+#menu ul li a, #menu ul li:hover a {
+	color: black;
+}
+
+.circle-container, .main-head{
+	padding-top: 1%;
+}
+
+.circle-container{	
+	padding-bottom: 1%;
+}
+
+.main-head{
+	font-size: 20px;
+	padding-bottom: 1.5%;
+}
+
+.main-container{
+	height: 600px;
+}
+
+#menu ul{
+	margin: 0;
+	padding: 0px, 0px, 20px, 20px;
+}
+
+#menu ul li{
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	display: inline-block;
+}
+
+#menu ul li:hover {
+	background-color: #95bcf2;
+}
+
+.text-container{
+	padding: 1% 1% 1.5% 1.5%;
+	display: block;
+}
+
+.circle-container{
+	height: 25%;
+}
+
+.last-container{
+	border-bottom-style: none;
+}
+
+#blue-div{
+	width: 28%;
+	background-color: #00ffff;
+}
+
+.text-div{
+	width: 68%;
+	margin-left: 2%;
+	overflow: auto;
+}
+
+#red-circle{
+	background-color: red;
+	width: 150px;
+	height: 100%;
+	border-radius: 50%
+}
+
+footer{
+	background-color: #38761d;
+	height: 10%;
+	position: relative;
+}
+
+p.right-bottom{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+
+
+
+
