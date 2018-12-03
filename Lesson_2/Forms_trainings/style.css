@@ -1,0 +1,67 @@
+html, body {
+	width: 98%;
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.name, html, body{
+	background-color: white;
+}
+
+h1, p{
+	margin: 0;
+}
+
+.performin, .passformin{
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+header, .personal-data, .password, .others{
+	margin-bottom: 20px;
+}
+
+.personal-data, .password, .others{
+	border: 2px solid black;
+}
+
+header{
+	border-bottom: 2px solid black;
+}
+
+.performin{
+	width: 33%;
+	padding: 10px 10px 10px 10px;
+}
+
+.passformin{
+	width: 50%;
+	text-align: center;
+}
+
+h1{
+	padding: 10px 0px 10px 0;
+}
+
+.personal-data{
+	height: 180px;
+}
+
+.password{
+	height: 150px;
+}
+
+.others{
+	height: 200px;
+}
+
+.name{
+	position: relative;
+	text-align: center;
+	width: 100px;
+	height: 20px;
+	top: -15px;
+	left: 20px;
+}
+
