@@ -3,6 +3,7 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Projekt 1</title>
 	<meta charset="utf-8">
 </head>
@@ -11,7 +12,10 @@
 <body>
 
 <header>
-<h1>Forms trainings</h1>
+<h1>Forms trainings <a href="/pomoc" class="icon-block">
+<i class="fa fa-question-circle" style="font-size:32px"></i>
+</a></h1>
+
 </header>
 
 <main>
@@ -19,64 +23,96 @@
 		<div class='name'>
 			<p>Personal</p>
 		</div>
-		<form>
-			<div class="performin">
-				Name:
-				<input type="text" name="Name">
-			</div>
-			<div class="performin">
-  				Surename:
-  				<input type="text" name="Surename">
-  			</div>
-  			<div class="performin">
-  				Birth:
-  				<input type="date" name="Birth">
-  			</div>
-  			<div class="performin">
-  				Street:
-  				<input type="text" name="Street">
-  			</div>
-  			<div class="performin">
-  				Town:
-  				<input type="text" name="Town">
-  			</div>
-  			  	<div class="performin">
-	  			Country:
-  				<input type="text" name="Country">
-  			</div>
-  			  	<div class="performin">
-  				Age:
-  				<input type="text" name="Age">
-  			</div>
-  				<div class="performin">
-  				Telephone:
-  				<input type="text" name="Telephone">
-  			</div>
-		</form> 
+		<div class="performin">
+			<p class="pform">Name</p>
+			<input type="text" name="Name">
+		</div><div class="performin">
+  			<p class="pform">Surename</p>
+  			<input type="text" name="Surename">
+  		</div><div class="performin">
+  			<p class="pform">Birth</p>
+  			<input id="date-input" type="date" name="Birth">
+  			<i class="fa fa-calendar" style="font-size:20px"></i>
+  		</div><div class="performin">
+  			<p class="pform">Street</p>
+  			<input type="text" name="Street">
+  		</div><div class="performin">
+  			<p class="pform">Town</p>
+  			<input type="text" name="Town">
+  		</div><div class="performin">
+	  		<p class="pform">Country</p>
+  			<select>
+  			<option value="poland">Poland</option>
+  			<option value="spain">Spain</option>
+  			<option value="italy">Italy</option>
+			</select> 
+  		</div><div class="performin">
+  			<p class="pform">Age</p>
+  			<input type="number" min="1" max="120" name="Age">
+  		</div><div class="performin">
+  			<p class="pform">Telephone</p>
+  			<input type="text" name="Telephone">
+  		</div>
 	</div>
 	<div class="password">
 		<div class='name'>
 			<p>Password</p>
 		</div>
-		<form>
-  			<div class="passformin">
-  				Password:
-  				<input type="text" name="Password">
-  			</div>
-  			<div class="passformin">
-  				Retry password:
-  				<input type="text" name="RePassword">
-  			</div>
-  		</form>
+  		<div class="passformin">
+  			<p class="pform">Password</p>
+  			<input type="password" name="password">
+  		</div><div class="passformin">
+  			<p class="pform">Retry password</p>
+  			<input type="password" name="repassword">
+  		</div>
 	</div>
 	<div class="others">
 		<div class='name'>
 			<p>Others</p>
 		</div>
+		<p class="pform">Sport</p>
+		<div class="others-child">
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="football">
+				<label>Football</label>
+			</div>
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="Basketball" disabled>
+				<label>Basketball</label>
+			</div>
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="Swimming">
+				<label>Swimming</label>
+			</div>
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="Tenis">
+				<label>Tenis</label>
+			</div>
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="Gym">
+				<label>Gym</label>
+			</div>
+			<div class="other-form-in">
+				<input type="checkbox" name="sport" value="Running" disabled>
+				<label>Running</label>
+			</div>
+		</div>
+		<p class="pform">Gender</p>
+		<div class="others-child">
+			<div class="other-form-in">
+				<input type="radio" name="gender" value="male" checked>
+				<label>Male</label>
+			</div>
+			<div class="other-form-in-last">
+				<input type="radio" name="gender" value="female">
+				<label>Female</label>
+			</div>
+		</div>
 	</div>
+		<input class="submit-input" type="submit" value="Submit">
+		</form>		
 </main>
 
 </body>
-
 
 </html> 

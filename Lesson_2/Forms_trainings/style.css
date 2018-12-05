@@ -9,59 +9,115 @@ html, body {
 	background-color: white;
 }
 
-h1, p{
-	margin: 0;
+.other-form-in, .other-form-in-last, input, .pform, .performin, .passformin{
+	box-sizing: border-box;
 }
 
-.performin, .passformin{
-	box-sizing: border-box;
+input, .pform, .performin, .passformin{
 	display: inline-block;
 }
 
-header, .personal-data, .password, .others{
-	margin-bottom: 20px;
+.submit-input, header, .personal-data, .password, .others{
+	margin-bottom: 30px;
+	box-shadow: 5px 5px 4px #888888;
 }
 
 .personal-data, .password, .others{
 	border: 2px solid black;
+	padding: 0px 25px 0px 25px;
 }
+
+.other-form-in, .other-form-in-last, .others .pform, .others-child{
+	float: left;
+}
+
+input, .personal-data select{
+	width: 65%;
+}
+
+input, h1, p{
+	margin: 0;
+}
+
+.other-form-in, .other-form-in-last, .passformin{
+	width: 50%;
+}
+
+#date-input, .others-child{
+	width: 35%;
+}
+
+h1, .performin, .passformin{
+	padding: 10px 0px 10px 0px;
+}
+
+.icon-block, .others .pform, .name{
+	position: relative;
+}
+
+.pform, .name{
+	text-align: center;
+}
+
+.submit-input, .pform{
+ 	width: 125px;
+ }
 
 header{
 	border-bottom: 2px solid black;
 }
 
 .performin{
-	width: 33%;
-	padding: 10px 10px 10px 10px;
-}
-
-.passformin{
-	width: 50%;
-	text-align: center;
-}
-
-h1{
-	padding: 10px 0px 10px 0;
+	width: 33.33%;
 }
 
 .personal-data{
 	height: 180px;
+	display: block;
 }
 
 .password{
-	height: 150px;
+	height: 100px;
 }
 
 .others{
-	height: 200px;
+	height: 160px;
 }
 
 .name{
-	position: relative;
-	text-align: center;
 	width: 100px;
 	height: 20px;
 	top: -15px;
-	left: 20px;
+	font-style: italic;
 }
 
+.others-child{
+	border-left: 2px solid black;
+	height: 130px;
+}
+
+.submit-input{
+	position: absolute;
+	right: 5%;
+}
+
+.other-form-in, .other-form-in-last{
+	padding-bottom: 25px;
+}
+
+.other-form-in input, .other-form-in-last input{
+	width: 30px;
+}
+
+.other-form-in-last{
+	clear: both;
+}
+
+.icon-block{
+	color: black;
+	float: right;
+	padding-right: 25px;
+}
+
+.icon-block:hover{
+	color: #e0e0d1;
