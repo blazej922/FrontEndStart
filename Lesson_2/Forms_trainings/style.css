@@ -39,11 +39,11 @@ input, h1, p{
 	margin: 0;
 }
 
-.other-form-in, .other-form-in-last, .passformin{
+.date-input, .other-form-in, .other-form-in-last, .passformin{
 	width: 50%;
 }
 
-#date-input, .others-child{
+ .others-child{
 	width: 35%;
 }
 
@@ -121,3 +121,8 @@ header{
 
 .icon-block:hover{
 	color: #e0e0d1;
+}
+
+.date-input{
+	margin-right: 20px;
+}
