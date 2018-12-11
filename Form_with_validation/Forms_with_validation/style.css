@@ -1,0 +1,49 @@
+html, body {
+	width: 98%;
+	height: 800px;
+}
+
+.form-data, html, body{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.name, html, body{
+	background-color: white;
+}
+
+.form-data{
+	width: 50%;
+}
+
+input, input:hover, input:active{
+	width: 200px;
+	height: 20px;
+}
+
+select{
+	width: 205px;
+	height: 30px;
+}
+
+select, input, input:hover{
+	background-color: #e6f9ff;
+}
+
+select, input, input:hover{
+	border: 2px solid #cceeff;
+}
+
+input:hover, input:active{
+	border: 2px solid #80d4ff;
+}
+
+input:focus{
+	background-color: #b3e6ff;
+}
+
+#screen{
+	border: 2px solid black;
+	width: 300px;
+	height: 200px;
+}
