@@ -1,65 +1,67 @@
- <!doctype html>
+ <!DOCTYPE>
 
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style.css"></link>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Source+Serif+Pro" rel="stylesheet"> 
   <title>Projekt 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  
 
   <header>
     <h1>Registration form</h1>
   </header>
 
   <main>
-    <form>
+    <form id="registration">
       <div class="form-data">
         <div class="performin">
+          <p class="pform">E-mail</p>
+          <input id="email" type="email" name="e-mail">
+        </div><div class="performin">
           <p class="pform">Name</p>
-          <input type="text" value="blazej" name="name">
+          <input class="form-input" type="text" name="name">
         </div><div class="performin">
           <p class="pform">Surename</p>
-          <input type="text" name="surename">
+          <input class="form-input" type="text" name="surename">
         </div><div class="performin">
           <p class="pform">Birth</p>
-          <input class="date-input" type="date" name="birth">
-          <i class="fa fa-calendar" style="font-size:20px"></i>
+          <input class="form-input" type="date" name="birth">
         </div><div class="performin">
-          <p class="pform">Street</p>
-          <input type="text" name="Street">
+          <p class="pform">Street and house nr.</p>
+          <input class="form-input" type="text" name="street">
         </div><div class="performin">
           <p class="pform">Town</p>
-          <input type="text" name="Town">
+          <input class="form-input" type="text" name="Town">
         </div><div class="performin">
           <p class="pform">Country</p>
-          <select>
+          <select class="form-input">
           <option value="poland">Poland</option>
           <option value="spain">Spain</option>
           <option value="italy">Italy</option>
           </select> 
         </div><div class="performin">
           <p class="pform">Age</p>
-          <input type="number" min="1" max="120" name="Age">
+          <input class="form-input" type="number" min="1" max="120" name="Age">
         </div><div class="performin">
           <p class="pform">Telephone</p>
-          <input type="text" name="telephone">
+          <input class="form-input" type="tel" name="telephone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
         </div><div class="passformin">
           <p class="pform">Password</p>
-          <input type="password" name="password">
+          <input class="form-input" type="password" name="password">
         </div><div class="passformin">
           <p class="pform">Retry password</p>
-          <input id="pass" type="password" name="repassword">
+          <input class="form-input" type="password" name="repassword">
         </div>
+        <input id="submit-input" type="submit" value="Submit">
       </div>
-      <input id="submit-input" type="submit" value="Submit">
+      
     </form> 
   </main>
+
 <script src="script.js"></script>
 </body>
 </html>
