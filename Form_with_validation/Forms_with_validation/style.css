@@ -8,7 +8,6 @@
 	width: 20%;
     }
 
-
 .performin, .passformin{
     order: 0;
     flex: 0 1 auto;
@@ -21,17 +20,13 @@ html, body{
 	height: 800px;
 }
 
-p{
-	margin: 5px 0px 5px 0px;
-}
-
-h1{
-	font-family: 'Lobster', cursive;
-	text-align: center;
-}
-
 select, .pform, #email, .form-input{
 	width: 100%;
+}
+
+p, input, select{
+	font-family: 'Source Serif Pro', serif;
+	font-size: 18px;
 }
 
 #submit-input, .form-data{
@@ -56,6 +51,10 @@ input:focus{
 	background-color: #b3e6ff;
 }
 
+input, select{
+	height: 30px;
+}
+
 .form-data{
 	border: 3px solid #19C3FF;
 	background-color: #6ED9FF;
@@ -74,9 +73,13 @@ input:focus{
 	background-color: #e67700;
 }
 
-p, input{
-	font-family: 'Source Serif Pro', serif;
-	font-size: 18px;
+p{
+	margin: 5px 0px 5px 0px;
+}
+
+h1{
+	font-family: 'Lobster', cursive;
+	text-align: center;
 }
 
 @media only screen and (max-width: 820px) {
