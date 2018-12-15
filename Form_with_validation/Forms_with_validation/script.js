@@ -9,13 +9,13 @@ function red_input(input){
 }
 
 var email = document.querySelector('#email');
-
 var array = ['blazej@wp.pl', 'shoplet@shoplet.pl']
 
 email.addEventListener('change', function(){
-	for (var i in array){
-		if (email.value === array[i]){
+	for (i=0; i<array.length; i++){
+		if (email.value == array[i]){
 		window.alert('This email is already in use.');
+		red_input(email);
 		}
 	}	
 })
@@ -27,13 +27,21 @@ var x = document.querySelectorAll('.form-input, #email');
 var check = x.length;
 
 for(i=0; i<x.length; i++){
-		if(x[i].value==""){
-			red_input(x[i]);
-		}
-		else{
-			green_input(x[i]);
-			check -= 1;
-		}
+	if(x[i].value == ""){
+		red_input(x[i]);
+	}
+	else{
+		green_input(x[i]);
+		check -= 1;
+	}
+}
+
+for (i=0; i<array.length; i++){
+	if (email.value == array[i]){
+	window.alert('This email is already in use.');
+	red_input(email);
+	check += 1;
+	}
 }
 
 var pass = document.forms['registration']['password'];
@@ -54,7 +62,7 @@ if (check==0){
 	}
 }
 else{
-	window.alert('The ' + check + ' field/s is/are empty.');
+	window.alert('The ' + check + ' field/s are not correct.');
 	pass.value = '';
 	repass.value = '';
 	red_input(pass);
