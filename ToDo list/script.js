@@ -1,35 +1,22 @@
 var task = document.querySelector('#title');
 var tasks = document.querySelector('#tasks');
-var button = document.querySelector('#add');
+var bootton = document.querySelector('#myBtn');
+var done = document.querySelector('#done');
+var inputs = '<input class="remove" type=\'button\' value=\'Delete\' onclick=\'delEl(event)\'>'
+  		  +  '<input class="edit" type=\'button\' value=\'Edit\' onclick=\'editEl(event)\'>'
 
-function Task(title, pk) {
-  this.pk = pk;
-  this.taskTitle = title;
-  this.add = function(){  
-  	tasks.innerHTML += '<div>' + this.taskTitle 
-  					+  '<input type=\'button\' value=\'Delete\' onclick=\'' + 'parentElement.remove()' + '\'>'
-  					+  '<input id=\'abc' + this.pk + '\' type=\'button\' value=\'Edit\' onclick=\'' + 'edit(' + this.pk + ')' + '\'>' 
-  					+  '</div>';};	
+function delEl (event){
+		event.target.parentElement.remove();
+	}
+
+function editEl (event){
+	event.target.parentElement.innerHTML = task.value + inputs;
 }
 
-var titles = [];
-
-button.addEventListener('click', function(event) {
+bootton.addEventListener('click', function(event){
 	event.preventDefault();
-	var taskID = titles.length;
-	var taskObj = new Task(task.value, taskID);
-	taskObj.add();
-	titles.push(taskObj);
-	task.value = '';
+	tasks.innerHTML += '<div>' + task.value
+  					+ inputs
+					+ '</div>';
 });
-
-function edit(number){
-	var inputNr = document.querySelector('#abc' + number);
-	inputNr.parentElement.remove();
-	var task = document.querySelector('#title');
-	afterEdit = new Task(task.value, number);
-	afterEdit.add();
-	titles[number] = (afterEdit);
-  	inputNr.parentElement.innerHTML = afterEdit;
-}
 
