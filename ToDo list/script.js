@@ -24,7 +24,7 @@ function editEl (event){
 		var x = parent.firstChild.value;
 		var div = document.createElement('div');
 		if(x != ''){
-			div.innerHTML += x + inputs;
+			div.innerHTML += '<p>' + x + '</p>' + inputs;
 			parent.replaceWith(div);
 		}
 		else{
@@ -52,7 +52,7 @@ function doneEl (event){
 bootton.addEventListener('click', function(event){
 	event.preventDefault();
 	if(task.value != ''){
-		tasks.innerHTML += '<div>' + task.value
+		tasks.innerHTML += '<div>' + '<p>' +  task.value + '</p>'
   						+ inputs
 						+ '</div>';
 	}

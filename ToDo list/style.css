@@ -1,18 +1,21 @@
-html, body{
-	width: 100%;
+body{
 	height: 800px;
 }
 
-input, body{
-	color: #009900;
-	font-family: 'Orbitron', sans-serif;
+body, .list-input, #tasks, #done-list{
+	width: 100%;
 }
 
-input, body{
+input, body, button, button:hover, #myBtn, p, #title{
+	font-family: 'Orbitron', sans-serif;
 	background-color: #1a1a1a;
 }
 
-header, .list-input, #tasks{
+input, body, #myBtn:hover, button:hover, p, #title{
+	color: #009900;
+}
+
+header, #title, .list-input, #tasks, #done-list{
 	box-sizing: border-box;
 }
 
@@ -22,7 +25,7 @@ body, header, .list-body{
 }
 
 header, .list-body{
-	width: 40%;
+	width: 60%;
 }
 
 header{
@@ -32,14 +35,12 @@ header{
 	background-image: linear-gradient(green, yellow);
 }
 
-
-p, input{
-	margin-left: 15px;
+h1, input, button, p, #title, #myBtn{
+	margin: 0;
 }
 
 h1{
 	padding: 15px 0px 15px 0px;
-	margin: 0;
 }
 
 .list-body{
@@ -56,32 +57,31 @@ h1{
 	order: 0;
     flex: 0 1 auto;
     align-self: center;
-    border: 1px solid #003300;
-    width: 100%;
-    border-radius: 10px;
+    padding: 10px;
 }
 
 .list-input:hover, .list:hover{
 	border-color: #004d00;
 }
 
-.list-input, #tasks{
-	height: 100px;
+.list-input, #tasks, #done-list{
+	height: 75px;
 	margin-bottom: 20px;
 }
 
 #tasks{
 	height: 250px;
-	padding: 30px;
+	overflow: auto;
 }
 
 #title{
-	border-bottom: 1px solid #006600;
+	border-bottom: 1px solid #004d00;
 	border-top: 0px;
 	border-left: 0px;
 	border-right: 0px;
+	border-style:dotted;
 	caret-color: #006600;
-	width: 45%;
+	width: 65%;
 }
 
 input{
@@ -90,8 +90,24 @@ input{
 
 #done-list{
 	height: 100px;
+	overflow: auto;
 }
 
-button, input{
-	width: 25%;
+#tasks > div > p{
+	display: inline-block;
 }
+
+input, button, p, #title, #myBtn{
+	height: 25px;
+	font-size: 18px;
+}
+
+button, #myBtn{
+	float: right;
+	border: 0;
+}
+
+button, #myBtn, #enter, #done-list > p{
+	color: #004d00;
+}
+
