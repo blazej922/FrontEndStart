@@ -2,28 +2,67 @@ var task = document.querySelector('#title');
 var tasks = document.querySelector('#tasks');
 var bootton = document.querySelector('#myBtn');
 var done = document.querySelector('#done-list');
-var inputs = '<input class="remove" type=\'button\' value=\'Delete\' onclick=\'delEl(event)\'>'
-  		  +  '<input class="edit" type=\'button\' value=\'Edit\' onclick=\'editEl(event)\'>'
-  		  +  '<input class="done" type=\'button\' value=\'Done\' onclick=\'doneEl(event)\'>'
+var inputs = '<button class="edit" onclick=\'editEl(event)\'>Edit</button>'
+  		  +  '<button class="remove" onclick=\'delEl(event)\'>Delete</button>'
+  		  +  '<button class="done" onclick=\'doneEl(event)\'>Done</button>'
 
 function delEl (event){
-		event.target.parentElement.remove();
+	event.preventDefault();
+	event.target.parentElement.remove();
 	}
 
 function editEl (event){
-	event.target.parentElement.innerHTML = task.value + inputs;
+	event.preventDefault();
+	var parent = event.target.parentElement;
+	var childsEl = parent.childNodes;
+	var inputEl = document.createElement('input');
+	var buttonEl = document.createElement('button');
+	buttonEl.className = 'OK';
+	buttonEl.innerHTML = 'OK';
+	buttonEl.addEventListener("click", function(event){
+		event.preventDefault();
+		var x = parent.firstChild.value;
+		var div = document.createElement('div');
+		if(x != ''){
+			div.innerHTML += x + inputs;
+			parent.replaceWith(div);
+		}
+		else{
+			window.alert('You must enter the title!')
+		}	
+	});
+	childsEl[0].replaceWith(inputEl);
+	var i;
+	for(i=0; i<=childsEl.length; i++){
+		parent.lastChild.remove();
+	}
+	parent.appendChild(buttonEl);
+	
 }
 
 function doneEl (event){
-	var x = event.target.parentElement.textContent;
+	event.preventDefault();
+	console.log(event);
+	var x = event.target.parentElement.firstChild.textContent;
+	console.log(x);
 	event.target.parentElement.remove();
 	done.innerHTML += '<p>' + x + '</p>';
 }
 
 bootton.addEventListener('click', function(event){
 	event.preventDefault();
-	tasks.innerHTML += '<div>' + task.value
-  					+ inputs
-					+ '</div>';
+	if(task.value != ''){
+		tasks.innerHTML += '<div>' + task.value
+  						+ inputs
+						+ '</div>';
+	}
+	else{
+		window.alert('You must enter the title!')
+	}	
 });
 
+
+onKeyPress(event){
+    if (event.which === 13{
+    	event.preventDefault();
+    }

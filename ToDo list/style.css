@@ -84,12 +84,7 @@ h1{
 	width: 45%;
 }
 
-#myBtn, input{
-	border: 0px;
-}
-
-#myBtn:hover{
-	color: #004d00;
+input{
 	border: 0px;
 }
 
