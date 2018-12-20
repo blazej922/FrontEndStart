@@ -91,3 +91,7 @@ input{
 #done-list{
 	height: 100px;
 }
+
+button, input{
+	width: 25%;
+}

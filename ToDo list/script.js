@@ -60,9 +60,3 @@ bootton.addEventListener('click', function(event){
 		window.alert('You must enter the title!')
 	}	
 });
-
-
-onKeyPress(event){
-    if (event.which === 13{
-    	event.preventDefault();
-    }
