@@ -1,5 +1,5 @@
 body{
-	height: 800px;
+	height: 700px;
 }
 
 body, .list-input, #tasks, #done-list{
@@ -109,5 +109,11 @@ button, #myBtn{
 
 button, #myBtn, #enter, #done-list > p{
 	color: #004d00;
+}
+
+@media only screen and (max-width: 820px) {
+	header, .list-body{
+		width: 85%;
+  	}
 }
 

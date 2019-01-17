@@ -10,7 +10,16 @@ var right = document.querySelector('#right');
 
 var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
-//drop down menu for mobile resolutions
+function setOpac(element){
+	element.style.opacity = "0.1";
+};
+
+function raiseOpac(element){
+		setTimeout(function(){}, 1000);
+		setInterval(function(){if(eval(element.style.opacity)<=1){element.style.opacity *= 1.05;}}, 80);
+};
+
+//menu for mobile resolutions
 if(viewportWidth <= 736){
 
 	logo.addEventListener('mouseover', function(event){

@@ -16,6 +16,7 @@ function editEl (event){
 	var parent = event.target.parentElement;
 	var childsEl = parent.childNodes;
 	var inputEl = document.createElement('input');
+	inputEl.style.borderLeft = '5px solid #004d00';
 	var buttonEl = document.createElement('button');
 	buttonEl.className = 'OK';
 	buttonEl.innerHTML = 'OK';
