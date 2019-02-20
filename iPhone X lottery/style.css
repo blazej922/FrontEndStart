@@ -11,7 +11,7 @@ header { grid-area: header; }
 	font-family: 'Cabin', sans-serif;
 }
 
-p, body, menu, h1, ul{
+p, body, menu, h1, ul, #left, #right{
 	margin: 0;
 	padding: 0;
 }
@@ -82,7 +82,14 @@ li {
 
 li > a{
 	padding-left: 10px;
+}
+
+#person-data button:hover, li > a{
 	color: white;
+}
+
+#person-data button, #left, #right{
+	background-color: white;
 }
 
 a, #person-data button, #person-data button{
@@ -111,19 +118,19 @@ h1{
 }
 
 #person-data button{
-	width: 50%;
 	height: 35px;
 	margin-top: 10px;
-	border-radius: 0;
-	background-color: white;
 	border-bottom: 2px solid #b51bd9;
 	border-right: 2px solid #b51bd9;
 	margin-left: 25%;
 }
 
+#person-data button, #left, #right{
+	border-radius: 0;
+}
+
 #person-data button:hover{
 	background-color: #d877ee;
-	color: white;
 }
 
 a:hover{
@@ -133,10 +140,8 @@ a:hover{
 #left, #right{
 	opacity: 0.3;
 	position: absolute;
-	border-radius: 0;
 	width: 25px;
 	height: 25px;
-	background-color: white;
 	border: 0;
 	top: 50%;
 }
@@ -161,8 +166,11 @@ a:hover{
 	position: relative;
 }
 
-.image>img{
+.image>img, #person-data button{
 	width: 50%;
+}
+
+.image>img{
 	margin: auto;
 	display: block;
 }
@@ -184,15 +192,28 @@ a:hover{
 
 #left, #right{
 	font-size: 24px;
-	width: 120px;
+	width: 60px;
 	height: 120px;
-	top: 50%;
-	left: 15%;
-	right: 15%;
+	top: 35%;
 }
 
-#left, #right, .image{
-	position: static;
+#left{
+	float: left;
+	left: 5%;
+}
+
+#right{
+	float: right;
+	right: 5%;
+}
+
+.image{
+	position: relative;
+	z-index: 20;
+}
+
+#left, #right{
+	position: absolute;
 }
 
 .wrapper{
@@ -207,6 +228,7 @@ a:hover{
 }
 
 menu{
+	z-index: 100;
 	width: 100%;
 	position: -webkit-sticky;
 	position: sticky;
@@ -220,7 +242,6 @@ menu{
 	margin-left: auto;
 	margin-right: auto;
 }
-
 }
 
 @media only screen and (min-width: 737px) {
