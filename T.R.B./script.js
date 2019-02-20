@@ -31,11 +31,37 @@ right.onclick = () => {slider(1)};
 
 
 const menu = document.querySelector('menu');
-let mark = document.querySelector('menu').children[1];
+const mark = menu.children[1];
+
+const addMenu = () => {
+	const ulEl = document.createElement('ul');
+	ulEl.innerHTML += '<li><a href=\"#about\">O nas</a></li>';
+	ulEl.innerHTML += '<li><a href=\"#card\">Projekty</a></li>';
+	ulEl.innerHTML += '<li><a href=\"#offer\">Oferta</a></li>';
+	ulEl.innerHTML += '<li><a href=\"#footer\">Kontakt</a></li>';
+	menu.appendChild(ulEl);
+}
+
+if(window.innerWidth >= 768){
+		mark.remove();
+		addMenu();
+}
+
+window.onresize = () => { 
+	if(window.innerWidth >= 768){
+		mark.remove();
+		if(menu.lastChild.tagName != 'UL'){
+			addMenu();
+		}
+	}
+	else{
+		window.location.reload(true);
+	}
+}
 
 mark.addEventListener('click', () => {
 
-	markClass = document.querySelector('menu').children[1].className;
+	markClass = mark.className;
 
 	const closeMenu = () => {
 		menu.style.height = '60px';
@@ -47,12 +73,7 @@ mark.addEventListener('click', () => {
 		case ('fas fa-bars'):
 		menu.style.height = '120px';
 		mark.className = 'fas fa-times';
-		const ulEl = document.createElement('ul');
-		ulEl.innerHTML += '<li><a href=\"#about\">O nas</a></li>';
-		ulEl.innerHTML += '<li><a href=\"#card\">Projekty</a></li>';
-		ulEl.innerHTML += '<li><a href=\"#offer\">Oferta</a></li>';
-		ulEl.innerHTML += '<li><a href=\"#footer\">Kontakt</a></li>';
-		menu.appendChild(ulEl);
+		addMenu();
 		const menuButtons = document.querySelectorAll('menu ul li a');
 		for(let i=0; i < menuButtons.length; i++){
 			menuButtons[i].addEventListener('click', closeMenu);
@@ -65,13 +86,5 @@ mark.addEventListener('click', () => {
 });
 
 
-if(window.screen.width >= 768){
-	mark.remove();
-	const ulEl = document.createElement('ul');
-	ulEl.innerHTML += '<li><a href=\"#about\">O nas</a></li>';
-	ulEl.innerHTML += '<li><a href=\"#card\">Projekty</a></li>';
-	ulEl.innerHTML += '<li><a href=\"#offer\">Oferta</a></li>';
-	ulEl.innerHTML += '<li><a href=\"#footer\">Kontakt</a></li>';
-	menu.appendChild(ulEl);
-}
+
 

@@ -53,6 +53,7 @@ menu i:hover{
 
 .slider{
 	height: 45vh;
+  overflow: hidden;
 }
 
 #about, #footer, #card, #offer, .card-body{
@@ -68,11 +69,12 @@ menu i:hover{
 }
 
 .slider img{
-	margin: auto;
-	top: 0;
-	bottom: 0;
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 40vh;
+	left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
 }
 
 button{
@@ -255,19 +257,12 @@ menu ul li a, menu ul li a:visited, .person{
   }
 
   .slider img{
-  	width: 60%;
+  	max-height: 70vh;
   	float: none;
-  	left: 20%;
   }
 }
 
 @media (min-width: 768px) {
-
- 	.slider img{
-  	float: none;
-  	left: 30%;
-  	width: 40%;
-  }
 
   .desktop-container{
 	padding: 10px 0 10px 0;
