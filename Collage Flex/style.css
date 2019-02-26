@@ -1,0 +1,151 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+#drop-menu, #navbar{
+	position: fixed;
+}
+
+#navbar, section, footer, #drop-menu{
+	width: 100%;
+}
+
+#navbar, .white-line{
+	height: 60px;
+}
+
+#drop-menu, #navbar, .white-line{
+	background-color: white;
+}
+
+#navbar{
+	top: 0;
+}
+
+#navbar i{
+	font-size: 30px;
+	padding: 15px 5px;
+	float: right;
+}
+
+#navbar i:hover{
+	color: #4d4d4d;
+}
+
+section, .header-div, #drop-menu ul li{
+	box-sizing: border-box;
+}
+
+section, footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #1a1a1a;
+	height: 100vh;
+	color: #d9d9d9;
+}
+
+.white-line, #drop-menu{
+	top: 60px;
+}
+
+.white-line{
+	position: sticky;
+	
+}
+
+.white-line img, #drop-menu ul li, #about img, #offer img, #partners img{
+	display: block;
+}
+
+.white-line img{
+	margin: 0 auto;
+	width: 370px;
+	padding-top: 15px;
+}
+
+#drop-menu{
+	display: none;
+	height: 160px;
+}
+
+#drop-menu ul li, h1{
+	text-align: center;
+}
+
+#drop-menu ul li{
+	text-align: center;
+	height: 40px;
+	padding-top: 10px;
+	font-size: 20px;
+	-webkit-box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
+	box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
+}
+
+#drop-menu ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+#about img, #offer img{
+	width: 230px;
+	margin: 0 auto;
+}
+
+#offer img{
+	width: 350px;
+}
+
+section .header-div, section p, #about img{
+	padding-top: 20px;
+}
+
+section p{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+h1{
+	font-weight: normal;
+}
+
+#partners{
+	justify-content: center;
+}
+
+#partners img{
+	margin: 0 auto;
+	width: 200px;
+}
+
+@media (min-width: 768px){
+
+	#navbar{
+		display: none;
+	}
+
+	#drop-menu{
+		top: 0;
+		display: block;
+		height: 60px;
+		box-sizing: border-box;
+	}
+
+	#drop-menu ul li{
+		display: inline;
+		border-bottom: none;
+		float: right;
+		padding: 15px 15px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
