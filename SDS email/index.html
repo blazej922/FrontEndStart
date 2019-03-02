@@ -1,0 +1,217 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>SDS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	html, body{
+		height: 100vh;
+	}
+
+	body{
+		font-family: 'Roboto';
+		font-size: 18px;
+   	}
+
+   	.left, .right, .third-line{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.third-line{
+		flex-direction: column;
+	}
+
+	.template{
+		display: block;
+		margin: 0px auto;
+		height: 680px;
+	}
+
+	.first-line, .second-line, .third-line, .fourth-line, .fifth-line, footer{
+		position: relative;
+	}
+
+	.first-line, .second-line, .fifth-line, .left, .bottom-div, .fourth-line p{
+		text-align: center;
+	}
+
+	.first-line{
+		-webkit-clip-path: polygon(50% 0%, 100% 0, 100% 65%, 95% 100%, 5% 100%, 0 65%, 0 0);
+		clip-path: polygon(50% 0%, 100% 0, 100% 65%, 95% 100%, 5% 100%, 0 65%, 0 0);
+	}
+
+	.first-line, .second-line{
+		background-color: #2d384c;	
+	}
+
+	.first-line, .second-line, .fourth-line, .fifth-line{
+		color: #ffffff;	
+	}
+
+	.first-line p, .second-line p{
+		font-size: 1.2em;
+		padding: 10px;
+	}
+
+	.second-line{
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 51%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 51%);
+		width: 80%;
+		float: right;
+		top: 20px;
+	}
+
+	.second-line, .fourth-line{
+		background-color: #34a9d7;
+	}
+
+	.fourth-line, .fifth-line{
+		-webkit-clip-path: polygon(100% 0, 100% 49%, 94% 100%, 0 100%, 0 0);
+		clip-path: polygon(100% 0, 100% 49%, 94% 100%, 0 100%, 0 0);
+	}
+
+	.third-line, footer, .bottom-div{
+		width: 100%;
+	}
+
+	.fifth-line, .left, .right{
+		width: 50%;
+	}
+
+	.third-line{
+		height: 120px;
+		background-color: #c2c1c0;
+		top: 80px;
+	}
+
+	.fourth-line{
+		width: 95%;
+		top: 140px;
+	}
+
+	.fourth-line, .fifth-line{
+		font-size: 1.1em;
+	}
+
+	.fifth-line{
+		background-color: #4f4f4f;
+		left: 40%;
+		top: 130px;
+		z-index: 2;
+	}
+
+	.fourth-line p{
+		padding: 15px 0px;
+	}
+
+	.fifth-line p{
+		padding: 5px 0;
+	}
+
+	footer{
+		top: 120px;
+		height: 200px;
+	}
+
+	footer, .left, .right, .bottom-div{
+		box-sizing: border-box;
+	}
+
+	.left, .right, .third-line img, .bottom-div{
+		position: absolute;
+	}
+
+	.left, .right{
+		height: 180px;
+	}
+
+	.right{
+		right: 0;
+	}
+
+	.right img{
+		max-height: 15vh;
+		max-width: 40vw;
+	}
+
+	.third-line img{
+		width: 90%;
+		max-width: 350px;
+	}
+
+	.bottom-div{
+		background-color: #c2c1c0;
+		top: 180px;
+	}
+
+	.bottom-div p{
+		padding: 15px 0;
+	}
+
+	a:link, a:hover, a:active, a:visited {
+		text-decoration: none;
+		color: #ffffff;
+	}
+
+
+	@media (max-width: 350px){
+		*{
+			font-size: 14px;
+		}
+		.fourth-line p{
+			padding: 15px 10px;
+		}
+		.fifth-line{
+			left: 10%;
+		}
+	}
+
+	</style>
+</head>
+
+<body>
+	<div class="template">
+		<div class="first-line">
+			<p>Potrzebujesz modułów do systemu S7 300?</p>
+		</div>
+		<div class="second-line">
+			<p>My je mamy - od ręki, w rewelacyjnej ofercie!</p>
+		</div>
+		<div class="third-line">
+			<img src="https://i.ibb.co/myv8rB3/box3.png">
+		</div>
+		<div class="fourth-line">
+			<p>Spytaj się o ofertę lub dowiedz się więcej na:</p>
+		</div>
+		<div class="fifth-line">
+			<p><a href="https://sds-automatyka.pl/">sds-automatyka.pl</a></p>
+		</div>
+		<footer>
+			<div class="left">
+				<p>SDS Automatyka Sp. z.o.o.sp.k.<br>
+			   		Ul. Ostrowskiego 30</br>
+			   		53-238 Wrocław</br>
+			   		Tel 71 3390441</br>
+					biuro@sds-automatyka.pl</p>
+			</div>
+			<div class="right">
+				<img src="https://i.ibb.co/nCh2fbx/SDS.png">
+			</div>
+			<div class="bottom-div">
+				<p>OD 20 LAT PARTNER AUTOMATYKI PRZEMYSŁOWEJ</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html> 
