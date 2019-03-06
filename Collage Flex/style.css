@@ -6,13 +6,14 @@
 body{
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	font-family: 'Roboto';
 }
 
 #drop-menu, #navbar{
 	position: fixed;
 }
 
-#navbar, section, footer, #drop-menu{
+#navbar, section, footer, #drop-menu, iframe{
 	width: 100%;
 }
 
@@ -22,6 +23,7 @@ body{
 
 #drop-menu, #navbar, .white-line{
 	background-color: white;
+	z-index: 3;
 }
 
 #navbar{
@@ -38,16 +40,15 @@ body{
 	color: #4d4d4d;
 }
 
-section, .header-div, #drop-menu ul li{
+section, footer .header-div, #drop-menu ul li{
 	box-sizing: border-box;
 }
 
 section, footer{
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	background-color: #1a1a1a;
 	height: 100vh;
+	min-height: 650px;
 	color: #d9d9d9;
 }
 
@@ -55,9 +56,14 @@ section, footer{
 	top: 60px;
 }
 
+.white-line, .contact-div-2, section, footer{
+	display: flex;
+	justify-content: center;
+}
+
 .white-line{
 	position: sticky;
-	
+	align-items: center;
 }
 
 .white-line img, #drop-menu ul li, #about img, #offer img, #partners img{
@@ -66,8 +72,9 @@ section, footer{
 
 .white-line img{
 	margin: 0 auto;
-	width: 370px;
-	padding-top: 15px;
+	max-height: 60%;
+	max-width: 500px;
+	width: 90%;
 }
 
 #drop-menu{
@@ -75,12 +82,17 @@ section, footer{
 	height: 160px;
 }
 
-#drop-menu ul li, h1, h2{
+#offer ul{
+	padding-top: 20px;
+	list-style-position: inside;
+	list-style-type: square;
+}
+
+#drop-menu ul li, h1, h2, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
 	text-align: center;
 }
 
 #drop-menu ul li{
-	text-align: center;
 	height: 40px;
 	padding-top: 10px;
 	font-size: 20px;
@@ -94,13 +106,19 @@ section, footer{
 	color: black;
 }
 
-#about img, #offer img{
+#about img{
 	width: 230px;
 	margin: 0 auto;
 }
 
+.img-row-1, .img-row-2{
+	display: none;
+}
+
 #offer img{
-	width: 350px;
+	width: 75%;
+	max-width: 370px;
+	margin: 0 auto;
 }
 
 section .header-div, section p, #about img{
@@ -117,7 +135,11 @@ h1{
 }
 
 #partners{
-	justify-content: space-between;
+	justify-content: flex-start;
+}
+
+#partners h1{
+	padding: 15px 0;
 }
 
 footer{
@@ -131,16 +153,9 @@ footer{
 	width: 200px;
 }
 
-.contact-div-1{
-	text-align: center;
-}
-
 .contact-div-2{
-	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
 	padding: 5px 5px;
 }
 
@@ -156,6 +171,12 @@ h2{
 iframe{
 	margin:0px auto; 
 	display: inline-block;
+}
+
+@media (orientation: landscape){
+  section, footer{
+    height: 100vh;
+  }
 }
 
 @media (min-width: 768px){
@@ -180,5 +201,92 @@ iframe{
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
+
+	#about, .left, .img-row-1, .img-row-2{
+		display: -ms-flexbox;
+    	display: -webkit-flex;
+    	display: flex;
+	}
+
+	#about{
+		-webkit-flex-direction: row;
+    	-ms-flex-direction: row;
+    	flex-direction: row;
+		-webkit-align-content: center;
+    	-ms-flex-line-pack: center;
+   		 align-content: center;
+	}
+
+	#about, .left{
+		-webkit-align-items: center;
+    	-ms-flex-align: center;
+    	align-items: center;
+	}
+
+	#about > *{
+		flex-basis: 50%;
+	}
+
+	#about p{
+		padding-right: 5%;
+	}
+
+	#about .right p::before{
+		content: "O NAS";
+		display: block;
+		padding-bottom: 20px;
+		font-size: 26px;
+	}
+
+	#about .right p::after{
+		content: "Kilkunastu naszych przedstawicieli dociera systematycznie do klientów w województwach dolnośląskim, opolskim, lubuskim i wielkopolskim.\A\A Wysoka jakość nasztch produktów, rzeczowa obsługa oddbiorcy, szybka i sprawna dystrybucja - to wyróżnia naszą markę COLLAGE-FLEX.";
+		white-space: pre-line;
+	}
+
+	#about .header-div{
+		display: none;
+	}
+
+	.left{	
+		flex-direction: column;
+    	max-width: 50vw;
+	}
+
+	#fractal-1{
+		min-width: 300px;
+		max-width: 70%;
+	}
+
+	.img-row-1, .img-row-2{
+		max-width: 400px;
+		flex-direction: row;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-flex: 1 1 auto;
+  		flex: 1 1 auto;
+	}
+
+	.img-row-1 img, .img-row-2 img{
+		padding: 0 10px;
+	}
+
+@media (min-width: 992px){
+	.img-row-1{
+		max-width: 550px;
+	}
+
+	.img-row-1 img{
+		flex-basis: 25%;
+	}
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    	.img-row-1 img, .img-row-2 img{
+     	width: 100%;
+		height: 100%;
+		min-width: 0;
+	}
+}
+}
+
 
