@@ -83,27 +83,44 @@ section, footer{
 }
 
 #offer ul{
-	padding-top: 20px;
 	list-style-position: inside;
 	list-style-type: square;
 }
 
-#drop-menu ul li, h1, h2, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
+#offer a{
+	padding: 8px 5px;
+	width: 250px;
+	margin: 25px auto;
+	border-radius: 25px 2px;
+}
+
+#offer a:hover{
+	color: #D9D9D9;
+	background-color: #333333;
+}
+
+#drop-menu ul li, h1, h2, #offer a, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
 	text-align: center;
 }
 
-#drop-menu ul li{
-	height: 40px;
-	padding-top: 10px;
+#drop-menu ul li, #offer a{
 	font-size: 20px;
+}
+
+#drop-menu ul li{
+	padding-top: 10px;
+	height: 40px;
 	-webkit-box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
 	box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
 }
 
-#drop-menu ul li a{
-	text-decoration: none;
+#drop-menu ul li a, #offer a{
 	color: black;
+}
+
+#drop-menu ul li a, #offer a{
+	text-decoration: none;
 }
 
 #about img{
@@ -121,7 +138,7 @@ section, footer{
 	margin: 0 auto;
 }
 
-section .header-div, section p, #about img{
+section .header-div, section p, #about img, #offer ul{
 	padding-top: 20px;
 }
 
@@ -144,8 +161,11 @@ h1{
 
 footer{
 	justify-content: space-around;
-	background-color: #d9d9d9;
 	color: #1a1a1a;
+}
+
+#offer a, footer{
+	background-color: #d9d9d9;
 }
 
 #partners img{
@@ -192,7 +212,12 @@ iframe{
 		box-sizing: border-box;
 	}
 
+	#drop-menu ul li:hover{
+		border-bottom: 5px solid #F8EB01;
+	}
+
 	#drop-menu ul li{
+		height: 60px;
 		display: inline;
 		border-bottom: none;
 		float: right;
@@ -288,5 +313,110 @@ iframe{
 	}
 }
 }
+
+/*catalog*/
+
+.productDiv:nth-of-type(1){
+	padding-top: 80px;
+}
+
+.productSection{
+	height: auto;
+}
+
+.productDiv{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 25px 0;
+}
+
+.imgDiv{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 300px;
+}
+
+.imgDiv img{
+	max-width: 90%;
+	max-height: 280px;
+	padding-top: 10px;
+}
+
+.descriptionDiv p:nth-child(1){
+	font-size: 20px;
+	color: #d9d9d9;
+}
+
+.descriptionDiv p:nth-child(2){
+	color: #b3b3b3;
+}
+
+.productDiv input, .productDiv button{
+	margin: 20px 10px;
+}
+
+.productDiv input{
+}
+
+.productDiv button, .productDiv input{
+	color: #8c8c8c;
+	font-size: 18px;
+	border: none;
+	width: 80px;
+	background-color: #1a1a1a;
+	border-bottom: 2px solid #666666;
+}
+
+@media (min-width: 768px){
+	.productDiv{
+		flex-direction: row;
+}
+
+	.imgDiv{
+		width: 30vw; 
+	}
+
+	.descriptionDiv{
+		width: 70vw;
+	}
+
+}
+
+#mailDiv{
+	color: black;
+	width: 300px;
+	position: fixed;
+	right: 3%;
+	bottom: 0;
+	z-index: 2;
+	background-color: white;
+}
+
+#mailDiv p{
+	margin: 10px 15px;
+}
+
+#mailDiv input[type=text], #mailDiv textarea{
+	margin-left: 15px;
+}
+
+form[name='myForm']{
+	text-align: center;
+}
+
+form[name='myForm'] input[type='submit']{
+	margin: 10px 0;
+	border: none;
+}
+
+form[name='myForm'] input, form[name='myForm'] textarea{
+	background-color: white;
+	border: none;
+	border-bottom: 1px solid black;
+	color: black;
+}
+
 
 
