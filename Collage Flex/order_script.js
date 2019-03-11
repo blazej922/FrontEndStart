@@ -1,66 +1,36 @@
-const create = (name, description, imgSrc) => {
-	imgEl = document.createElement('IMG');
-	imgEl.src = imgSrc;
-	imgDiv = document.createElement('DIV');
-	imgDiv.className = 'imgDiv';
-	imgDiv.appendChild(imgEl);
-	productEl = document.createElement('DIV');
-	productEl.className = 'productDiv';
-	productEl.appendChild(imgDiv);
-	desEl = document.createElement('DIV');
-	desEl.className = 'descriptionDiv';
-	nameEl = document.createElement('P');
-	nameEl.textContent = name;
-	descriptionEl = document.createElement('P');
-	descriptionEl.textContent = description;
-	inputEl = document.createElement('INPUT');
-	buttonEl = document.createElement('BUTTON');
-	buttonEl.className = 'addButton';
-	buttonText = document.createTextNode('Dodaj');
-	buttonEl.appendChild(buttonText);
-	desEl.appendChild(nameEl);
-	desEl.appendChild(descriptionEl);
-	desEl.appendChild(inputEl);
-	desEl.appendChild(buttonEl);
-	productEl.appendChild(desEl);
-	section = document.querySelector('.productSection');
-	section.appendChild(productEl);
-}
-const foam = [{	name: 'FLEX Piana konstrukcyjna 2K',
-			   	description: 'Dwuskładnikowa, chemoutwardzalna, bardzo sztywna, poliuretanowa piana wężykowa do zastosowań konstrukcyjnych.',
-			   	url: 'img/products/Hetman-0034.jpg',
-			   	quantity: 0,
-			   	create: function createFunc(){
-			   		create(this.name, this.description, this.url);
-			   	},
-			},
-			   
-			  {	name: 'FLEX Piana PLUS pistoletowa',
-			   	description: 'Jednoskładnikowa, półsztywna pianka montażowa na bazie poliuretanu, zawierająca nieszkodliwy dla środowiska gaz rozprężający, twardniejąca pod wpływem wilgotoności powietrza.',
-			   	url: 'img/products/Hetman-0001.jpg',
-			   	quantity: 0,
-			   	create: function createFunc(){
-			   		create(this.name, this.description, this.url);
-			   	}
-			},
+import { foam } from './products.js';
+import { silicon } from './products.js';
 
-			  {	name: 'FLEX Piana pistoletowa zimowa',
-			   	description: 'Piana poliuretanowa montażwo-uszczelniająca przeznaczona do pracy w temperaturze otoczenia już od 10oC.',
-			   	url: 'img/products/Hetman-0014-2.jpg',
-			   	quantity: 0,
-			   	create: function createFunc(){
-			   		create(this.name, this.description, this.url);
-			   	}
-			}
-		]
+const foamButton = document.querySelectorAll('#drop-menu ul li')[0];
+const silButton = document.querySelectorAll('#drop-menu ul li')[1];
+const section = document.querySelector('section');
+const clearButton = document.forms['myForm']['clear'];
 
-for(let i=0; i<foam.length; i++){
-	foam[i].create();
-}
+const mailIco = document.querySelector('#mailDiv i');
 
-const order = [];
+mailIco.addEventListener('click', function() {
+  	const x = document.getElementById('mailDiv');
+  	x.classList.toggle("hidden");
+});
 
-buttons = document.querySelectorAll('.addButton');
+const addProducts = (prodName) => {
+	while (section.firstChild) {
+    section.removeChild(section.firstChild);
+	}
+	for(let i=0; i<prodName.length; i++){	
+	prodName[i].create();
+
+}};
+
+clearButton.addEventListener ('click', event => {
+	event.preventDefault();
+	localStorage.removeItem("order");
+	document.forms['myForm'].reset();
+});
+
+const addToOrder = () => {
+	const buttons = document.querySelectorAll('.addButton');
+
 for(let i=0; i<buttons.length; i++){
 	buttons[i].addEventListener('click', event => {
 		event.preventDefault();
@@ -72,27 +42,50 @@ for(let i=0; i<buttons.length; i++){
 			window.alert('Niepoprawna wartość. Wprowadź cyfę wiekszą od zera.')
 		}
 		else{
-			const result = order.find( product => product.name === name );
-			if( !result ){
+			if(localStorage.getItem('order')){
+				const orderStorage = JSON.parse(localStorage.getItem('order'));
+				const sameEl = orderStorage.find(element => element.name == name );
+				if(sameEl){
+					let x = orderStorage.indexOf(sameEl);
+					let elQ = parseInt(orderStorage[x].quantity);
+					elQ += parseInt(quantity);
+					orderStorage[x].quantity = elQ;
+					localStorage.setItem('order', JSON.stringify(orderStorage));
+				}else{
+					const orderObj = {name: name,
+							quantity: quantity}
+					orderStorage.push(orderObj);
+					localStorage.setItem('order', JSON.stringify(orderStorage));	
+				}	
+			}else{
+				const order = [];
 				const orderObj = {name: name,
-							  quantity: quantity};
+							quantity: quantity}
 				order.push(orderObj);
-				localStorage['zamowienie'] = order;
+				localStorage.setItem('order', JSON.stringify(order));
+				}		
 			}
-			else{
-				let sum = 0;
-				sum += parseInt(result.quantity);
-				sum += parseInt(quantity);
-				result.quantity = sum ;
-				console.log(order);
+			let formBody = document.forms['myForm']['body'];
+			document.forms['myForm'].reset();
+			let list = '';
+			const order = JSON.parse(localStorage.getItem('order'));
+			for (let i=0; i<order.length; i++){
+				list += order[i].quantity + ' szt ' + order[i].name + '\n';
 			}
-		}
-		let formBody = document.forms['myForm']['body'];
-		document.forms['myForm'].reset();
-		let list = '';
-		for (let i=0; i<order.length; i++){
-			list += order[i].quantity + ' szt ' + order[i].name + '\n';
-		}
-		formBody.value = 'Witam, jestem zainteresowany kupnem:\n\n' + list + '\nPozdrawiam';	
+			formBody.value = 'Witam, jestem zainteresowany kupnem:\n\n' + list + '\nPozdrawiam';	
+		});
+	}
+}	
+
+foamButton.addEventListener('click', () => {
+		addProducts(foam);
+		addToOrder();
 	});
-}
+
+silButton.addEventListener('click', () => {
+		addProducts(silicon);
+		addToOrder();
+	});
+
+addProducts(foam);
+addToOrder();

@@ -9,7 +9,7 @@ body{
 	font-family: 'Roboto';
 }
 
-#drop-menu, #navbar{
+#drop-menu, #navbar, #mailDiv{
 	position: fixed;
 }
 
@@ -22,8 +22,11 @@ body{
 }
 
 #drop-menu, #navbar, .white-line{
-	background-color: white;
 	z-index: 3;
+}
+
+#drop-menu, #navbar, .white-line, #mailDiv, form[name='myForm'] input, form[name='myForm'] textarea{
+	background-color: white;
 }
 
 #navbar{
@@ -44,12 +47,18 @@ section, footer .header-div, #drop-menu ul li{
 	box-sizing: border-box;
 }
 
-section, footer{
+section, footer, .productDiv, #news{
 	flex-direction: column;
-	background-color: #1a1a1a;
+}
+
+section, footer{
 	height: 100vh;
 	min-height: 650px;
 	color: #d9d9d9;
+}
+
+section, footer, .productDiv input, .productDiv button{
+	background-color: #1a1a1a;
 }
 
 .white-line, #drop-menu{
@@ -57,16 +66,26 @@ section, footer{
 }
 
 .white-line, .contact-div-2, section, footer{
-	display: flex;
 	justify-content: center;
+}
+
+.white-line, .contact-div-2, section, footer, .productDiv, .imgDiv{
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 .white-line{
 	position: sticky;
-	align-items: center;
 }
 
-.white-line img, #drop-menu ul li, #about img, #offer img, #partners img{
+#news, .white-line{
+	-webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.white-line img, #drop-menu ul li, #about img, #offer img{
 	display: block;
 }
 
@@ -91,7 +110,7 @@ section, footer{
 	padding: 8px 5px;
 	width: 250px;
 	margin: 25px auto;
-	border-radius: 25px 2px;
+	border-radius: 25px;
 }
 
 #offer a:hover{
@@ -99,11 +118,11 @@ section, footer{
 	background-color: #333333;
 }
 
-#drop-menu ul li, h1, h2, #offer a, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
+form[name='myForm'], #drop-menu ul li, h1, h2, #offer a, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
 	text-align: center;
 }
 
-#drop-menu ul li, #offer a{
+#drop-menu ul li, #offer a, .descriptionDiv p:nth-child(1){
 	font-size: 20px;
 }
 
@@ -115,7 +134,7 @@ section, footer{
 	box-shadow: 0px 11px 52px -17px rgba(0,0,0,0.75);
 }
 
-#drop-menu ul li a, #offer a{
+#drop-menu ul li a, #offer a, #mailDiv, form[name='myForm'] input, form[name='myForm'] textarea{
 	color: black;
 }
 
@@ -151,16 +170,30 @@ h1{
 	font-weight: normal;
 }
 
-#partners{
-	justify-content: flex-start;
+#news, .imgDiv{
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
-#partners h1{
+.imgDiv, .contact-div-2{
+	-webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+#news h1{
 	padding: 15px 0;
 }
 
-footer{
+.hidden{
+	margin-bottom: -350px;
+}
+
+.productDiv, footer{
 	justify-content: space-around;
+}
+
+footer{
 	color: #1a1a1a;
 }
 
@@ -168,13 +201,7 @@ footer{
 	background-color: #d9d9d9;
 }
 
-#partners img{
-	margin: 0 auto;
-	width: 200px;
-}
-
 .contact-div-2{
-	flex-direction: row;
 	flex-wrap: wrap;
 	padding: 5px 5px;
 }
@@ -182,6 +209,12 @@ footer{
 h2{
 	padding-top: 15px;
 	padding-bottom: 10px;
+}
+
+.news-div h2{
+	font-size: 18px;
+	padding: 0;
+	padding-top: 5px;
 }
 
 .person-contact{
@@ -193,6 +226,107 @@ iframe{
 	display: inline-block;
 }
 
+.productDiv:nth-of-type(1){
+	padding-top: 80px;
+}
+
+.productSection{
+	height: auto;
+	min-height: 100vh;
+}
+
+.productDiv{
+	padding: 25px 0;
+}
+
+.imgDiv{
+	height: 300px;
+}
+
+.imgDiv img{
+	max-width: 90%;
+	max-height: 280px;
+	padding-top: 10px;
+}
+
+.descriptionDiv p:nth-child(1){
+	color: #d9d9d9;
+}
+
+.descriptionDiv p:nth-child(2){
+	color: #b3b3b3;
+}
+
+.productDiv input{
+	margin: 20px 10px;
+}
+
+.productDiv input, .productDiv button{
+	font-size: 18px;
+}
+
+.productDiv input{
+	color: #8c8c8c;
+	border: none;
+	width: 80px;
+	border-bottom: 2px dotted #666666;
+}
+
+.productDiv button{
+	padding: 5px 25px;
+	color: #1aff66;
+	border-radius: 15px;
+	border: 2px solid #1aff66;
+}
+
+.productDiv button:hover{
+	background-color: #0d0d0d;
+}
+
+#mailDiv{
+	width: 300px;
+	right: 3px;
+	bottom: 0px;
+	z-index: 2;
+}
+
+#mailDiv p{
+	margin: 10px 15px;
+}
+
+#mailDiv input[type=text], #mailDiv textarea{
+	margin-left: 15px;
+}
+
+form[name='myForm'] input[type='submit']{
+	margin: 10px 15px;
+	border: none;
+}
+
+form[name='myForm'] input[type='submit'], form[name='myForm'] input, form[name='myForm'] textarea{
+	border: none;
+}
+
+form[name='myForm'] input, form[name='myForm'] textarea{
+	border-bottom: 1px dotted black;
+}
+
+#mailDiv i{
+	color: white;
+	position: absolute;
+	font-size: 35px;
+	z-index: 2;
+	top: -50px;
+	left: 250px;
+}
+
+.news-div{
+	margin-top: 10px;
+	border-bottom: 1px solid white;
+	height: 25vh;
+	width: 80%;
+}
+
 @media (orientation: landscape){
   section, footer{
     height: 100vh;
@@ -201,15 +335,18 @@ iframe{
 
 @media (min-width: 768px){
 
-	#navbar{
+	#navbar, #about .header-div{
 		display: none;
 	}
 
 	#drop-menu{
 		top: 0;
-		display: block;
 		height: 60px;
 		box-sizing: border-box;
+	}
+
+	#about .right p::before, #drop-menu{
+		display: block;
 	}
 
 	#drop-menu ul li:hover{
@@ -227,7 +364,7 @@ iframe{
 		box-shadow: none;
 	}
 
-	#about, .left, .img-row-1, .img-row-2{
+	#about, .left, .img-row-1, .img-row-2, #news{
 		display: -ms-flexbox;
     	display: -webkit-flex;
     	display: flex;
@@ -268,10 +405,6 @@ iframe{
 		white-space: pre-line;
 	}
 
-	#about .header-div{
-		display: none;
-	}
-
 	.left{	
 		flex-direction: column;
     	max-width: 50vw;
@@ -283,7 +416,6 @@ iframe{
 	}
 
 	.img-row-1, .img-row-2{
-		max-width: 400px;
 		flex-direction: row;
 		-webkit-justify-content: center;
 		justify-content: center;
@@ -291,8 +423,32 @@ iframe{
   		flex: 1 1 auto;
 	}
 
+	.img-row-1{
+		max-width: 390px;
+	}
+
+	.img-row-2{
+		max-width: 340px;
+	}
+
 	.img-row-1 img, .img-row-2 img{
 		padding: 0 10px;
+	}
+
+	.productDiv{
+		flex-direction: row;
+	}
+
+	.imgDiv{
+		width: 30vw; 
+	}
+
+	.descriptionDiv{
+		width: 70vw;
+	}
+
+	#mailDiv{
+		right: 1%;
 	}
 
 @media (min-width: 992px){
@@ -314,109 +470,7 @@ iframe{
 }
 }
 
-/*catalog*/
 
-.productDiv:nth-of-type(1){
-	padding-top: 80px;
-}
-
-.productSection{
-	height: auto;
-}
-
-.productDiv{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	padding: 25px 0;
-}
-
-.imgDiv{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	height: 300px;
-}
-
-.imgDiv img{
-	max-width: 90%;
-	max-height: 280px;
-	padding-top: 10px;
-}
-
-.descriptionDiv p:nth-child(1){
-	font-size: 20px;
-	color: #d9d9d9;
-}
-
-.descriptionDiv p:nth-child(2){
-	color: #b3b3b3;
-}
-
-.productDiv input, .productDiv button{
-	margin: 20px 10px;
-}
-
-.productDiv input{
-}
-
-.productDiv button, .productDiv input{
-	color: #8c8c8c;
-	font-size: 18px;
-	border: none;
-	width: 80px;
-	background-color: #1a1a1a;
-	border-bottom: 2px solid #666666;
-}
-
-@media (min-width: 768px){
-	.productDiv{
-		flex-direction: row;
-}
-
-	.imgDiv{
-		width: 30vw; 
-	}
-
-	.descriptionDiv{
-		width: 70vw;
-	}
-
-}
-
-#mailDiv{
-	color: black;
-	width: 300px;
-	position: fixed;
-	right: 3%;
-	bottom: 0;
-	z-index: 2;
-	background-color: white;
-}
-
-#mailDiv p{
-	margin: 10px 15px;
-}
-
-#mailDiv input[type=text], #mailDiv textarea{
-	margin-left: 15px;
-}
-
-form[name='myForm']{
-	text-align: center;
-}
-
-form[name='myForm'] input[type='submit']{
-	margin: 10px 0;
-	border: none;
-}
-
-form[name='myForm'] input, form[name='myForm'] textarea{
-	background-color: white;
-	border: none;
-	border-bottom: 1px solid black;
-	color: black;
-}
 
 
 

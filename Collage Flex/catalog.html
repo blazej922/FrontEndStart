@@ -26,18 +26,21 @@
 	<section class="productSection">
 	</section>
 	<div id="mailDiv">
+		<i class="fas fa-at"></i>
 		<form name="myForm" action="https://formspree.io/blazejr92@gmail.com" method="POST">
-			<p>Twoje imię:</p>
+			<p>Nazwa Twojej firmy:</p>
   			<input type="text" name="name">
-  			<p>Twój mail:</p>
+  			<p>Twój adres email:</p>
   			<input type="text" name="email">
   			<p>Treść:</p>
   			<textarea name="body"
           	rows="10" cols="33">
 			</textarea></br>
+			<input type="submit" name="clear" value="Wyczyść">
   			<input type="submit" value="Wyślij">
 		</form>
 	</div>
-<script src="order_script.js"></script>
+<script type="module" src="order_script.js"></script>
+<script type="module" src="products.js"></script>
 </body>
 </html> 
