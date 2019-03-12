@@ -96,8 +96,11 @@ section, footer, .productDiv input, .productDiv button{
 	width: 90%;
 }
 
-#drop-menu{
+#drop-menu, .img-col{
 	display: none;
+}
+
+#drop-menu{
 	height: 160px;
 }
 
@@ -116,6 +119,11 @@ section, footer, .productDiv input, .productDiv button{
 #offer a:hover{
 	color: #D9D9D9;
 	background-color: #333333;
+}
+
+#offer p:nth-of-type(1){
+	color: #ff6666;
+	font-size: 18px;
 }
 
 form[name='myForm'], #drop-menu ul li, h1, h2, #offer a, .contact-div-1, .contact-div-2, #about p, #offer p, #offer ul{
@@ -147,17 +155,13 @@ form[name='myForm'], #drop-menu ul li, h1, h2, #offer a, .contact-div-1, .contac
 	margin: 0 auto;
 }
 
-.img-row-1, .img-row-2{
-	display: none;
-}
-
 #offer img{
 	width: 75%;
 	max-width: 370px;
 	margin: 0 auto;
 }
 
-section .header-div, section p, #about img, #offer ul{
+section .header-div, section p, #offer ul{
 	padding-top: 20px;
 }
 
@@ -170,9 +174,14 @@ h1{
 	font-weight: normal;
 }
 
-#news, .imgDiv{
+.imgDiv{
 	-webkit-justify-content: center;
 	justify-content: center;
+}
+
+#news{
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .imgDiv, .contact-div-2{
@@ -185,8 +194,8 @@ h1{
 	padding: 15px 0;
 }
 
-.hidden{
-	margin-bottom: -350px;
+.show{
+	margin-bottom: 350px;
 }
 
 .productDiv, footer{
@@ -237,6 +246,7 @@ iframe{
 
 .productDiv{
 	padding: 25px 0;
+	border-bottom: 1px dashed white;
 }
 
 .imgDiv{
@@ -286,7 +296,7 @@ iframe{
 #mailDiv{
 	width: 300px;
 	right: 3px;
-	bottom: 0px;
+	bottom: -350px;
 	z-index: 2;
 }
 
@@ -320,11 +330,19 @@ form[name='myForm'] input, form[name='myForm'] textarea{
 	left: 250px;
 }
 
+.messageAdd{
+	animation: rotatato 1.2s;
+}
+
 .news-div{
 	margin-top: 10px;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 	height: 25vh;
 	width: 80%;
+	-webkit-box-shadow: 6px 2px 34px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 2px 34px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 2px 34px 0px rgba(0,0,0,0.75);
 }
 
 @media (orientation: landscape){
@@ -364,7 +382,7 @@ form[name='myForm'] input, form[name='myForm'] textarea{
 		box-shadow: none;
 	}
 
-	#about, .left, .img-row-1, .img-row-2, #news{
+	#about, #news, .img-col{
 		display: -ms-flexbox;
     	display: -webkit-flex;
     	display: flex;
@@ -379,7 +397,7 @@ form[name='myForm'] input, form[name='myForm'] textarea{
    		 align-content: center;
 	}
 
-	#about, .left{
+	#about{
 		-webkit-align-items: center;
     	-ms-flex-align: center;
     	align-items: center;
@@ -405,37 +423,68 @@ form[name='myForm'] input, form[name='myForm'] textarea{
 		white-space: pre-line;
 	}
 
-	.left{	
-		flex-direction: column;
+	.left{
     	max-width: 50vw;
+    	min-height: 700px;
+    	min-width: 400px;
+	}
+
+	.left, .news-div{
+		position: relative;
+	}
+
+	#fractal-1, .img-col, .news-div-img, .news-div-body, .img-col img{
+		position: absolute;
 	}
 
 	#fractal-1{
-		min-width: 300px;
-		max-width: 70%;
+		padding-top: 200px;
+		min-width: 350px;
+		left: -150px;
+		animation: toGrey 8s;
 	}
 
-	.img-row-1, .img-row-2{
-		flex-direction: row;
-		-webkit-justify-content: center;
-		justify-content: center;
-		-webkit-flex: 1 1 auto;
-  		flex: 1 1 auto;
+	.img-col{
+		display: block;
+		min-width: 400px;
+		z-index: 2;
+		top: 100px;
 	}
 
-	.img-row-1{
-		max-width: 390px;
+	.img-col img{
+		max-width: 200px;
 	}
 
-	.img-row-2{
-		max-width: 340px;
+	.img-col img:nth-of-type(1){
+		padding-top: -25px;
+		left: -5px;
+		animation: scale 1.5s;
 	}
 
-	.img-row-1 img, .img-row-2 img{
-		padding: 0 10px;
+	.img-col img:nth-of-type(2){
+		padding-top: 120px;
+		padding-left: 180px;
+		animation: scale 3s;
 	}
 
-	.productDiv{
+	.img-col img:nth-of-type(3){
+		padding-top: 220px;
+		padding-left: 200px;
+		animation: scale 4.5s;
+	}
+
+	.img-col img:nth-of-type(4){
+		padding-top: 360px;
+		padding-left: 180px;
+		animation: scale 6s;
+	}
+
+	.img-col img:nth-of-type(5){
+		padding-top: 450px;
+		animation: scale 7.5s;
+	}
+
+	.productDiv, #news{
 		flex-direction: row;
 	}
 
@@ -451,26 +500,97 @@ form[name='myForm'] input, form[name='myForm'] textarea{
 		right: 1%;
 	}
 
-@media (min-width: 992px){
-	.img-row-1{
-		max-width: 550px;
+	#news{
+		justify-content: space-around;
 	}
 
-	.img-row-1 img{
-		flex-basis: 25%;
+	#news .header-div{
+		display: none;
+	}
+
+	.news-div{
+		width: 25vw;
+		height: 80vh;
+		border: 1px solid black;
+	}
+
+	.news-div-img{
+		width: 150px;
+		height: 150px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border: 2px dashed red;
+	}
+
+	.news-div-body{
+		top: 200px;
+	}
+
+	.news-div h2{
+		padding: 10px 0;
 	}
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    	.img-row-1 img, .img-row-2 img{
-     	width: 100%;
-		height: 100%;
-		min-width: 0;
+@keyframes toGrey{
+	from{
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  		filter: grayscale(100%);
+  	}
+  	to{
+  		-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  		filter: grayscale(0%);
+  	}
+}
+
+@keyframes scale{
+ 	from {
+ 		opacity: 0;
+  		-ms-transform: scale(0.3, 1); /* IE 9 */
+  		-webkit-transform: scale(0.3, 1); /* Safari */
+  		transform: scale(0.3, 1);
+  	}
+  	to {
+  		opacity: 1;
+  	}
+}
+
+@keyframes scale{
+ 	from {
+ 		opacity: 0;
+  		-ms-transform: scale(0.3, 1); /* IE 9 */
+  		-webkit-transform: scale(0.3, 1); /* Safari */
+  		transform: scale(0.3, 1);
+  	}
+  	to {
+  		opacity: 1;
+  	}
+}
+
+@keyframes rotatato{
+	0%{
+        -webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
+	}
+	25%{
+        -webkit-transform: rotateZ(30deg);
+        -ms-transform: rotateZ(30deg);
+        transform: rotateZ(30deg);
+	}
+	50%{
+        -webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
+	}
+	75%{
+        -webkit-transform: rotateZ(30deg);
+        -ms-transform: rotateZ(30deg);
+        transform: rotateZ(30deg);
+	}
+	100%{
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
 	}
 }
-}
-
-
-
-
-

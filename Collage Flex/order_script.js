@@ -8,11 +8,13 @@ const clearButton = document.forms['myForm']['clear'];
 
 const mailIco = document.querySelector('#mailDiv i');
 
-mailIco.addEventListener('click', function() {
+//The function that causes order form is hidden or not
+mailIco.addEventListener('click', () => {
   	const x = document.getElementById('mailDiv');
-  	x.classList.toggle("hidden");
+  	x.classList.toggle('show');
 });
 
+//The function generates list of products
 const addProducts = (prodName) => {
 	while (section.firstChild) {
     section.removeChild(section.firstChild);
@@ -22,12 +24,14 @@ const addProducts = (prodName) => {
 
 }};
 
+//order form cleaning
 clearButton.addEventListener ('click', event => {
 	event.preventDefault();
 	localStorage.removeItem("order");
 	document.forms['myForm'].reset();
 });
 
+//fucntion adds product to localStorage and checks if the product is already there
 const addToOrder = () => {
 	const buttons = document.querySelectorAll('.addButton');
 
@@ -89,3 +93,16 @@ silButton.addEventListener('click', () => {
 
 addProducts(foam);
 addToOrder();
+
+const addButton = document.querySelectorAll('.addButton');
+
+for(let i=0; i<addButton.length; i++){
+	addButton[i].addEventListener('click', () => {
+		if(localStorage.getItem('order')){
+			mailIco.classList.add("messageAdd");
+			setTimeout(() => {
+				mailIco.classList.remove("messageAdd");
+		}, 1500);
+		}	
+	});
+}
