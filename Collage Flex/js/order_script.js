@@ -1,8 +1,7 @@
 import { foam } from './products.js';
 import { silicon } from './products.js';
 
-const foamButton = document.querySelectorAll('#drop-menu ul li')[0];
-const silButton = document.querySelectorAll('#drop-menu ul li')[1];
+const prodMenuButtons = document.querySelectorAll('#drop-menu ul li');
 const section = document.querySelector('section');
 const clearButton = document.forms['myForm']['clear'];
 
@@ -42,7 +41,8 @@ for(let i=0; i<buttons.length; i++){
 		const children = parent.children;
 		const name = children[0].textContent;
 		const quantity = children[2].value;
-		if( quantity === undefined || quantity == 0){
+		const numbers = /^[1-9]+$/;
+		if(!quantity.match(numbers)){
 			window.alert('Niepoprawna wartość. Wprowadź cyfę wiekszą od zera.')
 		}
 		else{
@@ -81,15 +81,16 @@ for(let i=0; i<buttons.length; i++){
 	}
 }	
 
-foamButton.addEventListener('click', () => {
-		addProducts(foam);
+for(let i=0; i<prodMenuButtons.length; i++){
+	const productsName = {'Piany': foam,
+					  'Silikony': silicon}
+	prodMenuButtons[i].addEventListener('click', (event) => {
+		let x = prodMenuButtons[i].textContent;
+		let y = productsName[x];
+		addProducts(y);
 		addToOrder();
 	});
-
-silButton.addEventListener('click', () => {
-		addProducts(silicon);
-		addToOrder();
-	});
+}
 
 addProducts(foam);
 addToOrder();

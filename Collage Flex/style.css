@@ -328,6 +328,7 @@ form[name='myForm'] input, form[name='myForm'] textarea{
 	z-index: 2;
 	top: -50px;
 	left: 250px;
+	color: #1aa3ff;
 }
 
 .messageAdd{
